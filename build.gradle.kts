@@ -14,7 +14,7 @@ sourceSets {
     main {
         withConvention(GroovySourceSet::class) {
             groovy {
-                setSrcDirs(listOf("jenkinsfile"))
+                setSrcDirs(listOf("jenkinsfiles"))
             }
         }
     }
