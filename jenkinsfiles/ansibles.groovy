@@ -2,7 +2,7 @@ import org.jenkinsci.plugins.workflow.libs.Library
 
 @Library('shared') _
 /**
- * @author Jaedoo Lee
+ * @author Jaedoo Lee1
  */
 
 node {
