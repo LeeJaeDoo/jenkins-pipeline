@@ -1,6 +1,3 @@
-import com.ncp.enums.Credential
-import com.ncp.enums.Part
-import com.ncp.enums.Project
 import org.jenkinsci.plugins.workflow.libs.Library
 
 @Library('shared') _
