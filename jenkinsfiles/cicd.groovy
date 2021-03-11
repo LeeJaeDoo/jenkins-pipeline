@@ -84,7 +84,7 @@ def test(String subProjectName = "", Boolean openapiUsed = false, String additio
 def deploy(String playbookName = "", String  extras = "") {
     ansiblePlaybook(
         inventory: "/home/ubuntu/ansibles/inventories/hosts/inventory",
-        playbook: "/home/ubuntu/ansibles/test.yml",
+        playbook: "/home/ubuntu/ansibles/sp-member.yml",
         extras: "--ssh-common-args='-o StrictHostKeyChecking=no' "
     )
 }
