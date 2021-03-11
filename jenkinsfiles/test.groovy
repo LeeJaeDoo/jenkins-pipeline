@@ -1,3 +1,10 @@
+import org.jenkinsci.plugins.workflow.libs.Library
+
+@Library('shared') _
+/**
+ * @author Jaedoo Lee
+ */
+
 node {
     stage ('CHECKOUT') {
         gitCheckout()
