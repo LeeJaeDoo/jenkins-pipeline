@@ -1,5 +1,7 @@
 import org.jenkinsci.plugins.workflow.libs.Library
 
+import static java.util.concurrent.TimeUnit.SECONDS
+
 @Library('shared') _
 /**
  * @author Jaedoo Lee
