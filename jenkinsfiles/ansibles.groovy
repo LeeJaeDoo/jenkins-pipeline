@@ -13,5 +13,5 @@ node {
 
 def gitPull() {
   sh label: '', script: '''cd /home/ubuntu/ansibles
-  git pull https://LeeJaeDoo:fd3ea2c7b6d80a0282f105a3ea2e2acda53b0012@github.com/LeeJaeDoo/ansibles.git master'''
+  git pull https://LeeJaeDoo:232317c8e8be656918b8bc424f05e9a419b1cf62@github.com/LeeJaeDoo/ansibles.git master'''
 }
