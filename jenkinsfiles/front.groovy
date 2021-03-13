@@ -41,8 +41,8 @@ def gitCheckout() {
 }
 
 def build(String subProjectName = "", String additionalOption = "") {
-    sh script: "sudo npm install"
-    sh script: "sudo npm run build"
+    sh script: "npm install"
+    sh script: "npm run build"
 }
 
 def deploy(String playbookName = "", String  extras = "") {
