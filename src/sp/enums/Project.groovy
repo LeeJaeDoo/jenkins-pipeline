@@ -11,6 +11,9 @@ enum Project {
   MART_FRONT("mart", "front"),
   MART_INTERNAL("mart", "internal")
 
+  private String projectName
+  private String subProjectName
+
   Project(String projectName, String subProjectName) {
     this.projectName = projectName
     this.subProjectName = subProjectName
