@@ -13,15 +13,15 @@ node {
     pipelineStage.gitCheckout()
   }
   stage ('CLEAN') {
-    pipelineStage.clean(Project.MEMBER_FRONT.subProjectName)
+    pipelineStage.clean(Project.MEMBER_INTERNAL.subProjectName)
   }
   stage ('BUILD') {
-    pipelineStage.build(Project.MEMBER_FRONT.subProjectName)
+    pipelineStage.build(Project.MEMBER_INTERNAL.subProjectName)
   }
   stage ('TEST') {
-    pipelineStage.test(Project.MEMBER_FRONT.subProjectName)
+    pipelineStage.test(Project.MEMBER_INTERNAL.subProjectName)
   }
   stage ('DEPLOY') {
-    pipelineStage.deploy(Project.MEMBER_FRONT.projectName + "-" + Project.MEMBER_FRONT.subProjectName)
+    pipelineStage.deploy(Project.MEMBER_INTERNAL.projectName + "-" + Project.MEMBER_INTERNAL.subProjectName)
   }
 }
