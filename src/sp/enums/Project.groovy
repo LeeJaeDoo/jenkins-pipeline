@@ -9,7 +9,13 @@ enum Project {
 
   /* sp-mart */
   MART_FRONT("mart", "front"),
-  MART_INTERNAL("mart", "internal")
+  MART_INTERNAL("mart", "internal"),
+
+  /* sp-gateway */
+  GATEWAY("gateway"),
+
+  /* sp-eureka */
+  EUREKA("eureka")
 
   private String projectName
   private String subProjectName
