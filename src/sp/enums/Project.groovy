@@ -25,6 +25,10 @@ enum Project {
     this.subProjectName = subProjectName
   }
 
+  Project(String projectName) {
+    this.projectName = projectName
+  }
+
   @NonCPS
   String getProjectName() {
     return projectName
