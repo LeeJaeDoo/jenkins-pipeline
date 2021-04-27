@@ -10,7 +10,7 @@ import sp.enums.Project
 
 node {
   stage ('CHECKOUT') {
-    pipelineStage.gitCheckout()
+    pipelineStage.gitCheckout(Project.EUREKA.getRepositoryName())
   }
   stage ('CLEAN') {
     pipelineStage.clean()

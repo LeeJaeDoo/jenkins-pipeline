@@ -10,7 +10,7 @@ import sp.enums.Project
 
 node {
   stage ('CHECKOUT') {
-    pipelineStage.gitCheckout()
+    pipelineStage.gitCheckout(Project.GATEWAY.getRepositoryName())
   }
   stage ('CLEAN') {
     pipelineStage.clean()

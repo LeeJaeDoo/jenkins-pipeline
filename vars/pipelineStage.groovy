@@ -1,9 +1,9 @@
-def gitCheckout() {
+def gitCheckout(String repositoryName) {
   checkout([$class                           : 'GitSCM',
             branches                         : [[name: "*/master"]],
             doGenerateSubmoduleConfigurations: false,
             extensions                       : [[$class: 'WipeWorkspace'], [$class: 'LocalBranch', localBranch: '**']],
-            userRemoteConfigs                : [[credentialsId: 'LeeJaeDoo', url: 'https://LeeJaeDoo:262283b0c7139420fc2eb4f2d2a6b0e8d6fc19d4@github.com/LeeJaeDoo/sp-member']]])
+            userRemoteConfigs                : [[credentialsId: 'LeeJaeDoo', url: "https://LeeJaeDoo:262283b0c7139420fc2eb4f2d2a6b0e8d6fc19d4@github.com/LeeJaeDoo/${repositoryName}"]]])
 }
 
 def clean(String subProjectName = "", String additionalOption = "") {

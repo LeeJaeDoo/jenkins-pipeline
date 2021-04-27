@@ -1,4 +1,4 @@
-package member.internal
+package auth.internal
 
 import org.jenkinsci.plugins.workflow.libs.Library
 import sp.enums.Project
@@ -10,18 +10,18 @@ import sp.enums.Project
 
 node {
   stage ('CHECKOUT') {
-    pipelineStage.gitCheckout(Project.MEMBER_INTERNAL.getRepositoryName())
+    pipelineStage.gitCheckout(Project.AUTH_INTERNAL.getRepositoryName())
   }
   stage ('CLEAN') {
-    pipelineStage.clean(Project.MEMBER_INTERNAL.subProjectName)
+    pipelineStage.clean(Project.AUTH_INTERNAL.subProjectName)
   }
   stage ('BUILD & TEST') {
-    pipelineStage.build(Project.MEMBER_INTERNAL.subProjectName)
+    pipelineStage.build(Project.AUTH_INTERNAL.subProjectName)
   }
 //  stage ('TEST') {
 //    pipelineStage.test(Project.MEMBER_INTERNAL.subProjectName)
 //  }
   stage ('DEPLOY') {
-    pipelineStage.deploy("${Project.MEMBER_INTERNAL.projectName}-${Project.MEMBER_INTERNAL.subProjectName}")
+    pipelineStage.deploy("${Project.AUTH_INTERNAL.projectName}-${Project.AUTH_INTERNAL.subProjectName}")
   }
 }
