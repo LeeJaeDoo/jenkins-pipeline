@@ -22,6 +22,6 @@ node {
 //    pipelineStage.test(Project.MEMBER_FRONT.subProjectName)
 //  }
   stage ('DEPLOY') {
-    pipelineStage.deploy("${Project.MEMBER_INTERNAL.projectName}-${Project.MEMBER_INTERNAL.subProjectName}")
+    pipelineStage.deploy("${Project.MEMBER_FRONT.projectName}-${Project.MEMBER_FRONT.subProjectName}")
   }
 }
