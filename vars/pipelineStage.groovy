@@ -8,17 +8,17 @@ def gitCheckout(String repositoryName) {
 
 def clean(String subProjectName = "", String additionalOption = "") {
   if (subProjectName.isEmpty()) {
-    sh script: "-c ./gradlew clean -q ${additionalOption}"
+    sh script: "./gradlew clean -q ${additionalOption}"
   } else {
-    sh script: "-c ./gradlew :${subProjectName}:clean -q ${additionalOption}"
+    sh script: "./gradlew :${subProjectName}:clean -q ${additionalOption}"
   }
 }
 
 def build(String subProjectName = "", String additionalOption = "") {
   if (subProjectName.isEmpty()) {
-    sh script: "-c ./gradlew :build ${additionalOption}"
+    sh script: "./gradlew :build ${additionalOption}"
   } else {
-    sh script: "-c ./gradlew :${subProjectName}:build ${additionalOption}"
+    sh script: "./gradlew :${subProjectName}:build ${additionalOption}"
   }
 }
 
@@ -27,7 +27,7 @@ def test(String subProjectName = "", Boolean openapiUsed = false, String additio
 
   if (openapiUsed && !subProjectName.isEmpty()) {
     def extraVars = [subProjectName: subProjectName]
-    sh script: "-c ./gradlew :${subProjectName}:openapi3 ${additionalOption}"
+    sh script: "./gradlew :${subProjectName}:openapi3 ${additionalOption}"
 
     ansiblePlaybook(
         extraVars: extraVars,
@@ -37,7 +37,7 @@ def test(String subProjectName = "", Boolean openapiUsed = false, String additio
         extras: "--ssh-common-args='-o StrictHostKeyChecking=no' "
     )
   } else {
-    sh script: "-c ./gradlew ${subProjectName}:test ${extras}"
+    sh script: "./gradlew ${subProjectName}:test ${extras}"
   }
 }
 
