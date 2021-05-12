@@ -8,6 +8,7 @@ import com.cloudbees.groovy.cps.NonCPS
 enum Repository {
   MEMBER("sp-member"),
   MART("sp-mart"),
+  REVIEW("sp-review"),
   AUTH("sp-auth"),
   EUREKA("sp-eureka"),
   GATEWAY("sp-gateway")

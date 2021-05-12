@@ -32,7 +32,7 @@ def test(String subProjectName = "", Boolean openapiUsed = false, String additio
     ansiblePlaybook(
         extraVars: extraVars,
         inventory: "/home/ubuntu/ansibles/inventories/hosts/inventory",
-        playbook: "/home/ubuntu/ansibles/ncp_documentation.yml",
+        playbook: "/home/ubuntu/ansibles/sp-documentation.yml",
         credentialsId: 'LeeJaeDoo',
         extras: "--ssh-common-args='-o StrictHostKeyChecking=no' "
     )

@@ -15,12 +15,12 @@ node {
   stage ('CLEAN') {
     pipelineStage.clean(Project.MEMBER_FRONT.subProjectName)
   }
-  stage ('BUILD & TEST') {
+  stage ('BUILD') {
     pipelineStage.build(Project.MEMBER_FRONT.subProjectName)
   }
-//  stage ('TEST') {
-//    pipelineStage.test(Project.MEMBER_FRONT.subProjectName)
-//  }
+  stage ('TEST') {
+    pipelineStage.test(Project.MEMBER_FRONT.subProjectName, true)
+  }
   stage ('DEPLOY') {
     pipelineStage.deploy("${Project.MEMBER_FRONT.projectName}-${Project.MEMBER_FRONT.subProjectName}")
   }

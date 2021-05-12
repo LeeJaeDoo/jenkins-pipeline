@@ -15,12 +15,12 @@ node {
   stage ('CLEAN') {
     pipelineStage.clean()
   }
-  stage ('BUILD & TEST') {
+  stage ('BUILD') {
     pipelineStage.build()
   }
-//  stage ('TEST') {
-//    pipelineStage.test()
-//  }
+  stage ('TEST') {
+    pipelineStage.test()
+  }
   stage ('DEPLOY') {
     pipelineStage.deploy(Project.GATEWAY.projectName)
   }

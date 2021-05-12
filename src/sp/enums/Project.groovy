@@ -11,6 +11,10 @@ enum Project {
   MART_FRONT("mart", "front", Repository.MART),
   MART_INTERNAL("mart", "internal", Repository.MART),
 
+  /* sp-review */
+  REVIEW_FRONT("review", "front", Repository.REVIEW),
+  REVIEW_INTERNAL("review", "internal", Repository.REVIEW),
+
   /* sp-gateway */
   GATEWAY("gateway", Repository.GATEWAY),
 
