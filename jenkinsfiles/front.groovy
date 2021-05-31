@@ -29,7 +29,7 @@ def gitCheckout() {
               branches                         : [[name: "*/master"]],
               doGenerateSubmoduleConfigurations: false,
               extensions                       : [[$class: 'WipeWorkspace'], [$class: 'LocalBranch', localBranch: '**']],
-              userRemoteConfigs                : [[credentialsId: 'LeeJaeDoo', url: 'https://LeeJaeDoo:262283b0c7139420fc2eb4f2d2a6b0e8d6fc19d4@github.com/LeeJaeDoo/sp-fe']]])
+              userRemoteConfigs                : [[credentialsId: 'LeeJaeDoo', url: 'https://LeeJaeDoo:262283b0c7139420fc2eb4f2d2a6b0e8d6fc19d4@github.com/it-chip/sp-fe']]])
 
     log.withStepNoEnd(stageName: "최근 commit log", {
         sh script: "git log --since=" + lastBuild.diffTime(SECONDS) + ".seconds --pretty=format:'%h %<(10,trunc)%an %ad   %s' --date=format:'%Y-%m-%d %H:%M'"

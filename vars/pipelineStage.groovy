@@ -3,7 +3,7 @@ def gitCheckout(String repositoryName) {
             branches                         : [[name: "*/master"]],
             doGenerateSubmoduleConfigurations: false,
             extensions                       : [[$class: 'WipeWorkspace'], [$class: 'LocalBranch', localBranch: '**']],
-            userRemoteConfigs                : [[credentialsId: 'LeeJaeDoo', url: "https://LeeJaeDoo:262283b0c7139420fc2eb4f2d2a6b0e8d6fc19d4@github.com/LeeJaeDoo/${repositoryName}"]]])
+            userRemoteConfigs                : [[credentialsId: 'LeeJaeDoo', url: "https://LeeJaeDoo:262283b0c7139420fc2eb4f2d2a6b0e8d6fc19d4@github.com/it-chip/${repositoryName}"]]])
 }
 
 def clean(String subProjectName = "", String additionalOption = "") {
