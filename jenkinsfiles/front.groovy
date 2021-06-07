@@ -8,20 +8,25 @@ import static java.util.concurrent.TimeUnit.SECONDS
  */
 
 node {
-    stage('CHECKOUT') {
-        gitCheckout()
-    }
+    try {
+        stage('CHECKOUT') {
+            gitCheckout()
+        }
 //    stage ('CLEAN') {
 //        clean()
 //    }
-    stage('BUILD') {
-        build()
-    }
+        stage('BUILD') {
+            build()
+        }
 //    stage ('TEST') {
 //        test()
 //    }
-    stage('DEPLOY') {
-        deploy()
+        stage('DEPLOY') {
+            deploy()
+        }
+        notifySlack("SUCCESS", "#00FF00")
+    } catch (e) {
+        notifySlack("FAILED", "#FF0000")
     }
 }
 def gitCheckout() {

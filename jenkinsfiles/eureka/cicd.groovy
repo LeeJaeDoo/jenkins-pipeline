@@ -9,19 +9,25 @@ import sp.enums.Project
  */
 
 node {
-  stage ('CHECKOUT') {
-    pipelineStage.gitCheckout(Project.EUREKA.getRepositoryName())
-  }
-  stage ('CLEAN') {
-    pipelineStage.clean()
-  }
-  stage ('BUILD & TEST') {
-    pipelineStage.build()
-  }
+  try {
+    notifySlack("STARTED", "#0000FF")
+    stage ('CHECKOUT') {
+      pipelineStage.gitCheckout(Project.EUREKA.getRepositoryName())
+    }
+    stage ('CLEAN') {
+      pipelineStage.clean()
+    }
+    stage ('BUILD & TEST') {
+      pipelineStage.build()
+    }
 //  stage ('TEST') {
 //    pipelineStage.test()
 //  }
-  stage ('DEPLOY') {
-    pipelineStage.deploy(Project.EUREKA.projectName)
+    stage ('DEPLOY') {
+      pipelineStage.deploy(Project.EUREKA.projectName)
+    }
+    notifySlack("SUCCESS", "#00FF00")
+  } catch (e) {
+    notifySlack("FAILED", "#FF0000")
   }
 }
