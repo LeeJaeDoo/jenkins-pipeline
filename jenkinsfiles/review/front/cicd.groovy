@@ -10,7 +10,7 @@ import sp.enums.Project
 
 node {
   try {
-    notifySlack("STARTED", "#0000FF")
+    pipelineStage.notifySlack("STARTED", "#0000FF")
     stage ('CHECKOUT') {
       pipelineStage.gitCheckout(Project.REVIEW_FRONT.getRepositoryName())
     }
@@ -26,8 +26,8 @@ node {
     stage ('DEPLOY') {
       pipelineStage.deploy("${Project.REVIEW_FRONT.projectName}-${Project.REVIEW_FRONT.subProjectName}")
     }
-    notifySlack("SUCCESS", "#00FF00")
+    pipelineStage.notifySlack("SUCCESS", "#00FF00")
   } catch (e) {
-    notifySlack("FAILED", "#FF0000")
+    pipelineStage.notifySlack("FAILED", "#FF0000")
   }
 }

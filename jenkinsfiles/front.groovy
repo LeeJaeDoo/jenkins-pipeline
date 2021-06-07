@@ -24,9 +24,9 @@ node {
         stage('DEPLOY') {
             deploy()
         }
-        notifySlack("SUCCESS", "#00FF00")
+        pipelineStage.notifySlack("SUCCESS", "#00FF00")
     } catch (e) {
-        notifySlack("FAILED", "#FF0000")
+        pipelineStage.notifySlack("FAILED", "#FF0000")
     }
 }
 def gitCheckout() {
