@@ -52,6 +52,6 @@ def deploy(String playbookName = "", String  extras = "") {
 def notifySlack(STATUS, COLOR) {
   slackSend channel: '#jenkins',
       message: STATUS+" : " + "${env.JOB_NAME}[${env.BUILD_NUMBER}] (${env.BUILD_URL})",
-      color: COLOR, tokenCredentialId: '0g7YKtEmTXZJvRZgEHb04SA0',
+      color: COLOR, /*tokenCredentialId: '0g7YKtEmTXZJvRZgEHb04SA0'*/,
       teamDomain: 'sogogui-pjt'
 }
